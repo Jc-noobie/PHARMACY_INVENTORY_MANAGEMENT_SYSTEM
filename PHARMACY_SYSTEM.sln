@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PHARMACY_SYSTEM", "PHARMACY_SYSTEM.csproj", "{3AD2E67F-0418-4D33-B6B3-33FE2B3E19EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseConnection", "..\DatabaseConnection\DatabaseConnection.csproj", "{9A4B6C92-355A-4A40-A6C8-B45ECA594980}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3AD2E67F-0418-4D33-B6B3-33FE2B3E19EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AD2E67F-0418-4D33-B6B3-33FE2B3E19EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AD2E67F-0418-4D33-B6B3-33FE2B3E19EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AD2E67F-0418-4D33-B6B3-33FE2B3E19EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A4B6C92-355A-4A40-A6C8-B45ECA594980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A4B6C92-355A-4A40-A6C8-B45ECA594980}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A4B6C92-355A-4A40-A6C8-B45ECA594980}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A4B6C92-355A-4A40-A6C8-B45ECA594980}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D8FD5378-9084-473A-BF00-1724D43786FE}
+	EndGlobalSection
+EndGlobal
