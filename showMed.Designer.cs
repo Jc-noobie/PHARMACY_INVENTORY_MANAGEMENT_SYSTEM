@@ -133,7 +133,7 @@
             this.refreshRecieptBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.refreshRecieptBtn.Font = new System.Drawing.Font("Special Gothic Expanded One", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refreshRecieptBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.refreshRecieptBtn.Location = new System.Drawing.Point(482, 549);
+            this.refreshRecieptBtn.Location = new System.Drawing.Point(482, 521);
             this.refreshRecieptBtn.Name = "refreshRecieptBtn";
             this.refreshRecieptBtn.Size = new System.Drawing.Size(103, 28);
             this.refreshRecieptBtn.TabIndex = 25;
@@ -190,7 +190,7 @@
             this.transactionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.transactionBtn.Font = new System.Drawing.Font("Special Gothic Expanded One", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.transactionBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.transactionBtn.Location = new System.Drawing.Point(482, 515);
+            this.transactionBtn.Location = new System.Drawing.Point(555, 486);
             this.transactionBtn.Name = "transactionBtn";
             this.transactionBtn.Size = new System.Drawing.Size(107, 28);
             this.transactionBtn.TabIndex = 20;
@@ -403,7 +403,7 @@
             this.sellBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sellBtn.Font = new System.Drawing.Font("Special Gothic Expanded One", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sellBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.sellBtn.Location = new System.Drawing.Point(482, 481);
+            this.sellBtn.Location = new System.Drawing.Point(482, 486);
             this.sellBtn.Name = "sellBtn";
             this.sellBtn.Size = new System.Drawing.Size(67, 28);
             this.sellBtn.TabIndex = 16;

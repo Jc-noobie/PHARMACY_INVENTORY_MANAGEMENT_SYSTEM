@@ -34,6 +34,9 @@ namespace PHARMACY_SYSTEM
         public int acc_id;
         public int shift_id;
 
+
+        public static bool refreshRcpt ;
+
         public showMed()
         {
             InitializeComponent();
@@ -51,6 +54,7 @@ namespace PHARMACY_SYSTEM
             idRandLabel.Text = Convert.ToString(rand.Next(1001,4953));
             refRLabel.Text = Convert.ToString(rand.Next(1001, 4953));
             appRandLabel.Text = Convert.ToString(rand.Next(1001, 4953));
+            refreshRcpt = true;
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -440,7 +444,8 @@ namespace PHARMACY_SYSTEM
         }
         private void refreshRecieptBtn_Click(object sender, EventArgs e)
         {
-            for(int i = 0; i < labelSize; i++ )
+            refreshRcpt = true;
+            for (int i = 0; i < labelSize; i++ )
             {
                 removeLabels();
             }
@@ -473,11 +478,10 @@ namespace PHARMACY_SYSTEM
                 totalAmount = price * inputedQuantity;
 
 
-                string query = "INSERT INTO sales(med_id ,acc_id, med_name , quantity_sold , price,total_amount ) values (@med_id,@acc_id, @med_name, @quantity_sold, @price,@total_amount);";
+                string query = "INSERT INTO sales(med_id ,acc_id, quantity_sold , price,total_amount ) values (@med_id,@acc_id,  @quantity_sold, @price,@total_amount);";
                 MySqlCommand cmd = new MySqlCommand(query, dbConnection.conn);
                 cmd.Parameters.AddWithValue("@med_id"  , med_id);
                 cmd.Parameters.AddWithValue("@acc_id", acc_id);
-                cmd.Parameters.AddWithValue("@med_name", name);
                 cmd.Parameters.AddWithValue("@quantity_sold", inputedQuantity);
                 cmd.Parameters.AddWithValue("@price", price);
                 cmd.Parameters.AddWithValue("@total_amount", totalAmount);
@@ -503,7 +507,7 @@ namespace PHARMACY_SYSTEM
                 dbConnection.connectionFunc();
                 dbConnection.conn.Open();
 
-                string query = "INSERT INTO shift_sales VALUES( @purchase_id,@shift_id) ;  ";
+                string query = "INSERT INTO sales_per_shift VALUES( @purchase_id,@shift_id) ;  ";
                 MySqlCommand cmd = new MySqlCommand(query, dbConnection.conn);
                 cmd.Parameters.AddWithValue("@purchase_id", purchase_id);
                 cmd.Parameters.AddWithValue("@shift_id", shift_id);
@@ -519,6 +523,9 @@ namespace PHARMACY_SYSTEM
             
 
         }
+
+
+        
         private void sellBtn_Click(object sender, EventArgs e)
         {
            
@@ -526,7 +533,10 @@ namespace PHARMACY_SYSTEM
             if(!string.IsNullOrEmpty(med_idInput.Text) && !string.IsNullOrEmpty(quantity_input.Text) && checkIfValid(med_idInput.Text) && checkIfValid(quantity_input.Text) )
             {
 
-                try
+
+                if(refreshRcpt)
+                {
+                    try
                 {
                     int med_id = Convert.ToInt32( this.med_idInput.Text);
                     if(med_id <= medicineCounter())
@@ -587,6 +597,14 @@ namespace PHARMACY_SYSTEM
                     MessageBox.Show(err.Message.ToString());
                 }
 
+                } else
+                {
+                    MessageBox.Show("Refresh the receipt first");
+                }
+
+
+
+
             } else
             {
                 MessageBox.Show("Fill all in the inputs and make sure your inputs are valid");
@@ -598,6 +616,7 @@ namespace PHARMACY_SYSTEM
         }
         private void transactionBtn_Click(object sender, EventArgs e)
         {
+            refreshRcpt = false;
             TotalItemLabel.Text = Convert.ToString(TotalQuantity);
             TotalPriceLabel.Text = Convert.ToString(TotalPrice);
         }
